@@ -7,6 +7,7 @@ const Student = require("../../models/Student");
 const auth = require("../../middleware/auth");
 const authStudent = require("../../middleware/authStudent");
 const QuizResult = require("../../models/QuizResult");
+
 //@route POST api/mycourses
 //@desc Get course by name author
 //@access Private

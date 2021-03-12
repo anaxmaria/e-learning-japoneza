@@ -15,7 +15,6 @@ const io = socketio(server);
 connectDB();
 //Init middleware
 app.use(express.json({ extended: false }));
-app.use(express.static("publicVideo"));
 
 app.get("/", (req, res) => res.send("API Running"));
 
@@ -29,16 +28,11 @@ app.use(function (req, res, next) {
 });
 app.use("/api/user", require("./routes/api/user"));
 app.use("/api/auth", require("./routes/api/auth"));
-app.use("/api/profile", require("./routes/api/profile"));
-app.use("/api/posts", require("./routes/api/posts"));
 
 app.use("/api/students", require("./routes/api/students"));
 app.use("/api/studentsAuth", require("./routes/api/authStudents"));
 
 app.use("/api/courses", require("./routes/api/courses"));
-app.use("/api/added", require("./routes/api/addedCourses"));
-app.use("/api/addedQuizzes", require("./routes/api/addedQuizzes"));
-app.use("/api/addedAssignments", require("./routes/api/addedAssigments"));
 
 app.use("/api/quizzes", require("./routes/api/quizz"));
 

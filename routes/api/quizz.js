@@ -6,7 +6,7 @@ const Quizz = require("../../models/Quizz");
 const User = require("../../models/User");
 
 //@route POST api/quizzes
-//@desc Create one quizz
+//@desc Create one quiz
 //@access Private
 router.post("/", auth, async (req, res) => {
   try {
@@ -69,6 +69,7 @@ router.post("/question/:id", auth, async (req, res) => {
     res.status(500).send("Server Error");
   }
 });
+
 //@route GET api/quizzes
 //@desc Get all quizzes
 //@access Private

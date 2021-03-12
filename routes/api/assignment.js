@@ -5,6 +5,7 @@ const authStudent = require("../../middleware/authStudent");
 const Quizz = require("../../models/Quizz");
 const User = require("../../models/User");
 const Assignment = require("../../models/Assignment");
+
 //@route POST api/assignment
 //@desc Create one assignment
 //@access Private
@@ -25,7 +26,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-//Get assignment by name course
+//Get assignment by course name
 router.get("/assignment/:name", auth, async (req, res) => {
   console.log(req.params.name);
   try {
@@ -43,6 +44,7 @@ router.get("/assignment/:name", auth, async (req, res) => {
     res.status(500).send("Server error");
   }
 });
+
 //@route GET api/courses/course/:id
 //@desc Get post by id
 //@access Private
