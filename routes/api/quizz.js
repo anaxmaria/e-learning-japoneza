@@ -84,6 +84,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+//get quiz by id
 router.get("/:id", auth, async (req, res) => {
   try {
     const quizz = await Quizz.findById(req.params.id);

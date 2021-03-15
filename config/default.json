@@ -1,4 +1,7 @@
 {
-    "mongoURI": "mongodb+srv://anamaria:anamaria@licenta.oxc9h.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    "jwtSecret": "mysecrettoken"
+    "mongoURI": "mongodb+srv://anamaria2:anamaria@licenta.oxc9h.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken",
+    "githubClientId": "6b02240c8a506fd6f082",
+    "githubSecret": "5c53dada38851e04d691b29a7cbbee7f36f32d67"
   }
+
