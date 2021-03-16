@@ -1,12 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Course = require("../../models/Course");
-const User = require("../../models/User");
 const auth = require("../../middleware/auth");
 const authStudent = require("../../middleware/authStudent");
-const fs = require("fs");
-const multer = require("multer");
-const path = require("path");
 
 //@route POST api/courses
 //@desc Register a course
