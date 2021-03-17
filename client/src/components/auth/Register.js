@@ -5,7 +5,7 @@ import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import { registerStudent } from "../../actions/auth";
-import regImg from "../../img/register6.png";
+import regImg from "../../img/register7.jpg";
 import PropTypes from "prop-types";
 
 const Register = ({ setAlert, register, isAuthenticated, registerStudent }) => {
@@ -46,7 +46,7 @@ const Register = ({ setAlert, register, isAuthenticated, registerStudent }) => {
       </div>{" "}
       <h1 className=".text-secondary">
         {" "}
-        <i className="fas fa-user"></i> Sign Up
+        <i className="fas fa-user-ninja"></i> Sign Up
       </h1>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">

@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import lms from "../../img/login4.jpg";
+import lms from "../../img/login6.jpg";
 import {
   login,
 } from "../../actions/auth";
@@ -42,7 +42,7 @@ const Login = ({ login, isAuthenticated, loginStudent }) => {
       </div>{" "}
       <h1 className=".text-secondary">
         {" "}
-        <i className="fas fa-user"></i> Sign In
+        <i className="fas fa-user-ninja"></i> Sign In
       </h1>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">

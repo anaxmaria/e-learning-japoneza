@@ -31,9 +31,6 @@ import {
   DELETE_QUIZZ,
   DELETE_ASSIGNMENT,
 } from "./types";
-import course from "../reducers/course";
-
-
 
 //Add course
 export const addCourse = (formData, history) => async (dispatch) => {
@@ -72,6 +69,7 @@ export const getAllCourses = () => async (dispatch) => {
     });
   }
 };
+
 //Get filtered courses
 export const getFilteredCourse = (enteredFilter) => async (dispatch) => {
   try {
@@ -87,6 +85,7 @@ export const getFilteredCourse = (enteredFilter) => async (dispatch) => {
     });
   }
 };
+
 //Get  course by id
 export const getCourseById = (id) => async (dispatch) => {
   try {
@@ -102,6 +101,7 @@ export const getCourseById = (id) => async (dispatch) => {
     });
   }
 };
+
 //Get course by author
 export const getCourseByAuthor = (enteredFilter) => async (dispatch) => {
   try {
@@ -411,6 +411,7 @@ export const getAssignmentByAuthor = (enteredFilter) => async (dispatch) => {
     });
   }
 };
+
 //Delete quizz
 export const deleteQuizz = (id) => async (dispatch) => {
   try {
@@ -428,6 +429,7 @@ export const deleteQuizz = (id) => async (dispatch) => {
     });
   }
 };
+
 //Delete assignment
 export const deleteAssignment = (id) => async (dispatch) => {
   try {

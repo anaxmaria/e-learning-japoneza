@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { getQuizzesByCourseName } from "../../actions/profile";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
-import StartQuiz from "../dashboard/StartQuiz";
-import history from "./history";
 
 const Quizzes = ({
   getQuizzesByCourseName,

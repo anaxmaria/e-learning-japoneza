@@ -18,7 +18,7 @@ export const Navbar = ({
       children: (
         <div>
           <h5>Hello, {user && user.name}</h5>
-          <a>Check out new courses on this platform!</a>
+          <a>Check out the newest courses on this platform!</a>
         </div>
       ),
     });
@@ -30,8 +30,8 @@ export const Navbar = ({
         <div>
           <h5>Hello, {user && user.name}</h5>
           <a>
-            Don't forget! Soon we will introduce a new function on platform.
-            More details in a few days!
+            More courses to be added!
+            Additional details in a few days!
           </a>
         </div>
       ),
@@ -41,10 +41,9 @@ export const Navbar = ({
       level: "info",
       children: (
         <div>
-          <h5>Quote of day</h5>
+          <h5>Proverb of day</h5>
           <a>
-            “The best thing about a boolean is even if you are wrong, you are
-            only off by a bit.”
+          Counting tanuki furs before they've been caught (捕らぬ狸の皮算用)
           </a>
         </div>
       ),
@@ -57,7 +56,7 @@ export const Navbar = ({
         <Fragment>
           <li>
             <Link to="/dashboard">
-              <i className="fas fa-user"></i>
+              <i className="fas fa-user-ninja"></i>
               <span className=".text-light"> Dashboard</span>
             </Link>
           </li>
@@ -81,7 +80,7 @@ export const Navbar = ({
           </li>
           <li>
             <Link to="/student/dashboard">
-              <i className="fas fa-user"></i>
+              <i className="fas fa-user-ninja"></i>
               <span className=".text-light"> Dashboard</span>
             </Link>
           </li>
@@ -110,7 +109,7 @@ export const Navbar = ({
     <nav className="navbar navbar-dark bg-dark">
       <h4>
         <Link to="/">
-          <i className="fas fa-code"></i> Nostradamus
+        <i class="fas fa-language"></i> PeraPera
         </Link>
       </h4>
       {!loading && (

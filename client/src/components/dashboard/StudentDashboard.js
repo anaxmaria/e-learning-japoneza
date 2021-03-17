@@ -19,14 +19,14 @@ const StudentDashboard = ({
   return (
     <Fragment>
       <p className="lead">
-        <i className="fas fa-user"></i> Welcome {user && user.name}
+      <i class="fas fa-user-ninja"></i> Welcome {user && user.name}
       </p>
       <div class="sidenav">
         <Link to="/student/my-courses">
-          <i class="fas fa-laptop-code .text-success"></i> My courses
+          <i class="fas fa-book-open .text-success"></i> My courses
         </Link>
         <Link to="/student/quiz-result">
-          <i class="fas fa-chart-line .text-success"></i> Quiz Results
+          <i class="fas fa-question .text-success"></i> Quiz Results
         </Link>
       </div>
       <form class="form-inline mr-auto">

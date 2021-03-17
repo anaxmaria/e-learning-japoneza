@@ -13,7 +13,7 @@ export const Landing = ({ auth: { user, isAuthenticated } }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large">Learn programming faster</h1>
+          <h1 className="x-large">Let's learn Japanese</h1>
           <p className="lead">
             “Code is like humor. When you have to explain it, it’s bad.”
           </p>
