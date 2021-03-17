@@ -28,11 +28,6 @@ const Statistics = ({
   useEffect(() => {
     getAssignmentByAuthor(user && user.name);
   }, []);
-  const data = coursesAdded.map(
-    (result) =>
-      result.rating.reduce((acc, curr) => acc + curr.score, 0) /
-      result.rating.length
-  );
   const myData = {
     type: "line",
     title: {
@@ -43,20 +38,6 @@ const Statistics = ({
     },
 
     series: [{ values: [0, 1, 0, 1, 2, 1, 1] }],
-  };
-
-  const myData2 = {
-    type: "bar3d",
-    title: {
-      text: "Average rating for each course",
-    },
-    plot: {
-      aspect: "bar",
-    },
-    "scale-x": {
-      labels: coursesAdded.map((course) => course.name).slice(),
-    },
-    series: [{ values: data }],
   };
 
   const myData3 = {
@@ -87,7 +68,7 @@ const Statistics = ({
               {" "}
               <i class="fas fa-book .text-success"></i>
               <div className="content">
-                <h3>{coursesAdded.length} cursuri</h3>
+                <h3>{coursesAdded.length} courses</h3>
               </div>
             </div>
           </div>
@@ -96,7 +77,7 @@ const Statistics = ({
               {" "}
               <i class="fas fa-question .text-success"></i>
               <div className="content">
-                <h3>{quizzAdded.length} chestionare</h3>
+                <h3>{quizzAdded.length} quizzes</h3>
               </div>
             </div>
           </div>
@@ -114,7 +95,7 @@ const Statistics = ({
               {" "}
               <i class="far fa-calendar-check"></i>
               <div className="content">
-                <h3>{assignmentsAdded.length} teme</h3>
+                <h3>{assignmentsAdded.length} assignments</h3>
               </div>
             </div>
           </div>
@@ -123,9 +104,6 @@ const Statistics = ({
 
       <p className="centerText">
         <ZingChart data={myData} height="400" width="600"></ZingChart>
-      </p>
-      <p className="centerText">
-        <ZingChart data={myData2} height="400" width="600"></ZingChart>
       </p>
       <p className="centerText">
         <ZingChart data={myData3} height="400" width="600"></ZingChart>

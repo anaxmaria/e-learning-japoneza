@@ -4,15 +4,12 @@ import {
   COURSES_ERROR,
   GET_FILTERED_COURSE,
   GET_CURRENT_COURSE,
-  ADD_COMMENT,
-  COMMENT_ERROR,
   GET_COURSE_BY_AUTHOR,
   DELETE_COURSE,
   UPDATE_COURSE,
   GET_COURSE_BY_ID,
   ADD_MY_COURSE,
   GET_COURSE_BY_STUDENT_NAME,
-  ADD_MY_FEEDBACK,
 } from "../actions/types";
 
 const initialState = {
@@ -72,22 +69,9 @@ export default function (state = initialState, action) {
         loading: false,
         courses: payload,
       };
-    case COMMENT_ERROR:
     case COURSES_ERROR:
       return {
         ...state,
-        loading: false,
-      };
-    case ADD_COMMENT:
-      return {
-        ...state,
-        course: { ...state.course, comment: payload },
-        loading: false,
-      };
-    case ADD_MY_FEEDBACK:
-      return {
-        ...state,
-        course: { ...state.course, rating: payload },
         loading: false,
       };
     default:

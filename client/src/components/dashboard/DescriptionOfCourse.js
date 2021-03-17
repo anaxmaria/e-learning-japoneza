@@ -21,14 +21,9 @@ const DescriptionOfCourse = ({
     id: match.params.id,
     courseName: course && course.name,
     authorName: course && course.author,
-    videoName: course && course.videoName,
-    description: course && course.description,
-    rating:
-      course &&
-      course.rating.reduce((acc, curr) => acc + curr.score, 0) /
-        course.rating.length,
+    description: course && course.description
   });
-  const { id, courseName, authorName, videoName, description } = formData;
+  const { id, courseName, authorName, description } = formData;
   return (
     <Fragment>
       <div className="courseTitleContainer">

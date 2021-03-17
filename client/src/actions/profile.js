@@ -2,9 +2,6 @@ import axios from "axios";
 import { setAlert } from "./alert";
 
 import {
-  GET_PROFILE,
-  PROFILE_ERROR,
-  UPDATE_PROFILE,
   ADD_COURSE,
   GET_COURSES,
   COURSES_ERROR,
@@ -14,9 +11,6 @@ import {
   ADD_QUESTION,
   QUESTION_ERROR,
   GET_QUIZZES,
-  CLEAR_PROFILE,
-  GET_PROFILES,
-  GET_REPOS,
   GET_CURRENT_QUIZZ,
   GET_CURRENT_COURSE,
   GET_COURSE_BY_AUTHOR,
@@ -58,10 +52,7 @@ export const addCourse = (formData, history) => async (dispatch) => {
     dispatch(setAlert("Course Added", "success"));
     history.push("/dashboard");
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
+    dispatch();
   }
 };
 
@@ -162,10 +153,7 @@ export const updateCourse = (id, formData, history) => async (dispatch) => {
     dispatch(setAlert("Course Updated", "success"));
     history.push("/dashboard");
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
+    dispatch();
   }
 };
 
@@ -255,10 +243,7 @@ export const getCurrentQuizzById = (quizzId) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { status: err.response.status },
-    });
+    dispatch();
   }
 };
 
@@ -271,10 +256,7 @@ export const getCurrentCourseById = (courseId) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { status: err.response.status },
-    });
+    dispatch();
   }
 };
 
@@ -324,10 +306,7 @@ export const getCurrentAssignmentById = (assignmentId) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { status: err.response.status },
-    });
+    dispatch();
   }
 };
 
@@ -346,10 +325,7 @@ export const addMyCourse = (formData) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { status: err.response.status },
-    });
+    dispatch();
   }
 };
 //Get course by student name
@@ -384,10 +360,7 @@ export const addMyQuizResult = (formData) => async (dispatch) => {
     });
     dispatch(setAlert("Result saved", "success"));
   } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { status: err.response.status },
-    });
+    dispatch();
   }
 };
 
