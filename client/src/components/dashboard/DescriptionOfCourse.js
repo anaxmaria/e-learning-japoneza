@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment, useState } from "react";
 import { connect } from "react-redux";
-import { getCurrentCourseById } from "../../actions/profile";
+import { getCourseById, getCurrentCourseById } from "../../actions/profile";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
@@ -20,14 +20,13 @@ const DescriptionOfCourse = ({
   const [formData, setFormData] = useState({
     id: match.params.id,
     courseName: course && course.name,
-    authorName: course && course.author,
-    description: course && course.description
+    description: course && course.description,
   });
-  const { id, courseName, authorName, description } = formData;
+  const { id, courseName, description } = formData;
   return (
     <Fragment>
       <div className="courseTitleContainer">
-        {course && course.name} - {course && course.author}
+        {course && course.name}
       </div>
       <div>{parse(`${course && course.description}`)}</div>
       <div>

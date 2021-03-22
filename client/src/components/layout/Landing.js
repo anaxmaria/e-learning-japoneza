@@ -15,7 +15,10 @@ export const Landing = ({ auth: { user, isAuthenticated } }) => {
         <div className="landing-inner">
           <h1 className="x-large">Let's learn Japanese</h1>
           <p className="lead">
-            “Code is like humor. When you have to explain it, it’s bad.”
+            自分の言語の限界が、自分の世界の限界。
+            <p>
+              The limits of my language are the limits of my world.
+            </p>
           </p>
           <div className="buttons">
             <Link to="/register" className="btn btn-primary">

@@ -19,18 +19,18 @@ const StudentDashboard = ({
   return (
     <Fragment>
       <p className="lead">
-      <i class="fas fa-user-ninja"></i> Welcome {user && user.name}
+        <i className="fas fa-user-ninja"></i> Welcome {user && user.name}
       </p>
-      <div class="sidenav">
+      <div className="sidenav">
         <Link to="/student/my-courses">
-          <i class="fas fa-book-open .text-success"></i> My courses
+          <i className="fas fa-laptop-code .text-success"></i> My courses
         </Link>
         <Link to="/student/quiz-result">
-          <i class="fas fa-question .text-success"></i> Quiz Results
+          <i className="fas fa-chart-line .text-success"></i> Quiz Results
         </Link>
       </div>
-      <form class="form-inline mr-auto">
-        <div class="active-pink-3 active-pink-4 mb-4">
+      <form className="form-inline mr-auto">
+        <div className="active-pink-3 active-pink-4 mb-4">
           <input
             type="text"
             name="search"
@@ -44,7 +44,7 @@ const StudentDashboard = ({
       </form>
       <button
         type="submit"
-        class="btn btn-outline-danger"
+        className="btn btn-outline-danger"
         onClick={(e) => {
           e.preventDefault();
           getFilteredCourse(enteredFilter);
@@ -58,11 +58,8 @@ const StudentDashboard = ({
         {enteredFilter === "" ? (
           <div>
             {courses &&
-              courses.map((result) => (
-                <div className="videoContainer">
-                  <div>
-                    {/*video was here*/}
-                  </div>
+              courses.map((result,idx) => (
+                <div key={idx} className="videoContainer">
                   <div className="text-black">
                     <strong className="courseTitle">{result.name}</strong>
                     <br />
@@ -70,7 +67,7 @@ const StudentDashboard = ({
                     <br />
                     <Link
                       to={`/student/describe-course/${result._id}`}
-                      class="myButton"
+                      className="myButton"
                     >
                       View Course
                     </Link>
@@ -82,15 +79,15 @@ const StudentDashboard = ({
           <ul>
             {course && (
               <div className="videoContainer">
-                {/*video was here*/}
                 <div className="text-black">
                   <strong className="courseTitle">{course.name}</strong>
                   <br />
                   <strong className="courseAuthor">{course.author}</strong>
                   <br />
+
                   <Link
                     to={`/student/describe-course/${course._id}`}
-                    class="myButton"
+                    className="myButton"
                   >
                     View Course
                   </Link>

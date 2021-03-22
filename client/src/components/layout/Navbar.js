@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 import NotificationSystem from "react-notification-system";
+
 export const Navbar = ({
   auth: { user, isAuthenticated, loading },
   logout,
@@ -74,7 +75,7 @@ export const Navbar = ({
               }}
             >
               {" "}
-              <i class="fas fa-bell badge"> 3 </i>
+              <i className="fas fa-bell badge"> 3 </i>
             </div>
             <NotificationSystem ref={notificationSystem} />
           </li>
@@ -109,7 +110,7 @@ export const Navbar = ({
     <nav className="navbar navbar-dark bg-dark">
       <h4>
         <Link to="/">
-        <i class="fas fa-language"></i> PeraPera
+        <i className="fas fa-language"></i> PeraPera
         </Link>
       </h4>
       {!loading && (

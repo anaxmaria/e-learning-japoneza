@@ -44,6 +44,8 @@
   --light-color: #dae1e7;
   --danger-color: #c70039;
   --success-color: #06623b;
+  --new-color: #80707a;
+  --newer-color: #e0d5dc;  
 }
 
 * {
@@ -215,11 +217,14 @@ img {
 }
 
 .btn-dark,
-.bg-dark,
 .badge-dark,
 .alert-dark {
   background: var(--dark-color);
   color: #fff;
+}
+
+.bg-dark{
+  background: var(--new-color)!important;
 }
 
 .btn-danger,
@@ -700,7 +705,7 @@ ul {
   z-index: 0;
   top: 0;
   left: 0;
-  background-color: var(--dark-color);
+  background-color: var(--newer-color);
   overflow-x: hidden;
   padding-top: 90px;
 }
