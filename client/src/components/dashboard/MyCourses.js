@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { getCourseByStudent, getCourseById } from "../../actions/profile";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import dog from '../../img/dog.jpg';
 
 const MyCourses = ({
   auth: { user },
@@ -24,9 +25,8 @@ const MyCourses = ({
               <div className="text-black">
                 <strong className="courseTitle">{result.courseName}</strong>
                 <br />
-                <strong className="courseAuthor">{result.authorName}</strong>
-                <br />
-
+                <div><img className="myCourseImg" src={dog} alt="dog"/></div>
+                {/*butonul de mai jos vreau sa duca la description of course dar da crash for some reason*/}
                 <Link
                   to={`/student/start-course/${result.courseId}`}
                   class="myButton"

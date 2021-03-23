@@ -91,7 +91,7 @@ const App = () => {
               />
               <PrivateRoute
                 exact
-                path="/student/urse/:id"
+                path="/student/describe-course/:id"
                 component={DescriptionOfCourse}
               />
               <PrivateRoute

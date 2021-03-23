@@ -29,6 +29,26 @@ const DescriptionOfCourse = ({
         {course && course.name}
       </div>
       <div>{parse(`${course && course.description}`)}</div>
+      <div className="myText">
+          <br />
+          If you want to practice what you've learned in this course solve the
+          quizzes and assignments below!
+        </div>
+        <div>
+          <Link
+            to={"/student/quizzes"}
+            className="btn btn-black btn-lg btn-block"
+          >
+            Quizzes
+          </Link>
+          <Link
+            to={"/student/assignments-list"}
+            className="btn btn-black btn-lg btn-block"
+          >
+            Assignments
+          </Link>
+        </div>
+        <br /><br />
       <div>
         <Link
           to={`/student/start-course/${course && course._id}`}

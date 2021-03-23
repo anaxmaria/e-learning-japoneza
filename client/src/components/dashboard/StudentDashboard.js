@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getAllCourses } from "../../actions/profile";
 import { getFilteredCourse } from "../../actions/profile";
+import cat from '../../img/cat.jpg';
 
 const StudentDashboard = ({
   auth: { user },
@@ -60,6 +61,7 @@ const StudentDashboard = ({
             {courses &&
               courses.map((result,idx) => (
                 <div key={idx} className="videoContainer">
+                  <img  src={cat} alt="cat"/>
                   <div className="text-black">
                     <strong className="courseTitle">{result.name}</strong>
                     <br />
@@ -79,6 +81,7 @@ const StudentDashboard = ({
           <ul>
             {course && (
               <div className="videoContainer">
+                <img  src={cat} alt="cat"/>
                 <div className="text-black">
                   <strong className="courseTitle">{course.name}</strong>
                   <br />

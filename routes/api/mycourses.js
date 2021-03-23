@@ -49,4 +49,23 @@ router.get("/:nameAuth", auth, async (req, res) => {
   }
 });
 
+// router.delete("/:nameAuth", auth, async (req, res) => {
+//   try {
+//     const course = await MyCourse.find({ studentName: req.params.nameAuth });
+
+//     if (!course) {
+//       return res.status(404).json({ msg: "Courses not found" });
+//     }
+
+//     await course.remove();
+//     res.json({ msg: "Course removed" });
+//   } catch (err) {
+//     console.error(err.message);
+//     if (err.kind === "ObjectId") {
+//       return res.status(404).json({ msg: "Courses not found" });
+//     }
+//     res.status(500).send("Server error");
+//   }
+// });
+
 module.exports = router;
