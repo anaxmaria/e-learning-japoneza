@@ -10,7 +10,7 @@ const authStudent = require("../../middleware/authStudent");
 router.post("/", auth, async (req, res) => {
   const course = new Course({
     name: req.body.name,
-    content: req.body.content,
+    /*content: req.body.content,*/
     description: req.body.description,
   });
   try {

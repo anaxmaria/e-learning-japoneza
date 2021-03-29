@@ -41,7 +41,7 @@ export const addCourse = (formData, history) => async (dispatch) => {
       },
     };
 
-    const res = await axios.post("api/courses", formData, config);
+    const res = await axios.post("api/courses", formData);
     dispatch({
       type: ADD_COURSE,
       payload: res.data,

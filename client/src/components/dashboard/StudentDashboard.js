@@ -5,12 +5,14 @@ import { connect } from "react-redux";
 import { getAllCourses } from "../../actions/profile";
 import { getFilteredCourse } from "../../actions/profile";
 import cat from '../../img/cat.jpg';
+import { addMyCourse } from "../../actions/profile";
 
 const StudentDashboard = ({
   auth: { user },
   getAllCourses,
   course: { courses, course },
   getFilteredCourse,
+  addMyCourse
 }) => {
   useEffect(() => {
     getAllCourses();
@@ -65,11 +67,12 @@ const StudentDashboard = ({
                   <div className="text-black">
                     <strong className="courseTitle">{result.name}</strong>
                     <br />
-                    <strong className="courseAuthor">{result.author}</strong>
-                    <br />
                     <Link
                       to={`/student/describe-course/${result._id}`}
                       className="myButton"
+                      onClick={() => {
+                        addMyCourse({id: result._id, courseName: result.name, description: result.description});
+                      }}
                     >
                       View Course
                     </Link>
@@ -113,6 +116,6 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
   course: state.course,
 });
-export default connect(mapStateToProps, { getAllCourses, getFilteredCourse })(
+export default connect(mapStateToProps, { getAllCourses, getFilteredCourse, addMyCourse })(
   StudentDashboard
 );

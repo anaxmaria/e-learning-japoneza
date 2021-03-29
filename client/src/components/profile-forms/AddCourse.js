@@ -29,7 +29,7 @@ const AddCourse = ({ addCourse, history, getCourseById, match }) => {
         onSubmit={(e) => {
           e.preventDefault();
           let formData = new FormData();
-          formData.append("video", file);
+          //formData.append("video", file);
           formData.append("name", name);
           formData.append("description", description);
           console.log(formData);

@@ -26,9 +26,9 @@ const MyCourses = ({
                 <strong className="courseTitle">{result.courseName}</strong>
                 <br />
                 <div><img className="myCourseImg" src={dog} alt="dog"/></div>
-                {/*butonul de mai jos vreau sa duca la description of course dar da crash for some reason*/}
+                {/**/}
                 <Link
-                  to={`/student/start-course/${result.courseId}`}
+                  to={`/student/describe-course/${result.courseId}`}
                   class="myButton"
                 >
                   Reattempt Course

@@ -157,11 +157,23 @@ export const loginStudent = (email, password) => async (dispatch) => {
   try {
     const res = await axios.post("/api/studentsAuth", body, config);
 
-    dispatch({
-      type: LOGIN_STUDENT_SUCCESS,
-      payload: res.data,
-    });
-    dispatch(loadStudent());
+    if(res.isAdmin){
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data,
+      });
+  
+      dispatch(loadUser());
+    }
+    else {
+      dispatch({
+        type: LOGIN_STUDENT_SUCCESS,
+        payload: res.data,
+      });
+      
+      dispatch(loadUser());
+      dispatch(loadStudent());
+    }
   } catch (err) {
     const errors = err.response.data.errors;
     if (errors) {

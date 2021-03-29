@@ -9,7 +9,7 @@ import {
 } from "../../actions/auth";
 import { loginStudent } from "../../actions/auth";
 
-const Login = ({ login, isAuthenticated, loginStudent }) => {
+const Login = ({ login, isAuthenticated, loginStudent, isAdmin }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: ""
@@ -18,20 +18,16 @@ const Login = ({ login, isAuthenticated, loginStudent }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   var status = "Student or Learning"
-  // TODO: update status
+  
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (status === "Developer") {
-      login(email, password);
-    } else {
       loginStudent(email, password);
-    }
   };
 
   //Redirect if logged in
-  if (isAuthenticated && status === "Developer") {
+  if (isAuthenticated && isAdmin) {
     return <Redirect to="/dashboard" />;
-  } else if (isAuthenticated && status == "Student or Learning") {
+  } else if (isAuthenticated && !isAdmin) {
     return <Redirect to="/student/dashboard" />;
   }
 
@@ -78,8 +74,10 @@ Login.propTypes = {
   login: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   loginStudent: PropTypes.func.isRequired,
+  isAdmin: PropTypes.bool
 };
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  isAdmin: state.auth.isAdmin,
 });
 export default connect(mapStateToProps, { login, loginStudent })(Login);

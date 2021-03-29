@@ -18,9 +18,6 @@ export const DashboardActions = () => {
       <Link to="/added-courses">
         <i class="fas fa-book-open"></i> Added Courses
       </Link>
-      <Link to="/get-statistics">
-        <i class="far fa-chart-bar .text-success"></i> Statistics
-      </Link>
     </div>
   );
 };

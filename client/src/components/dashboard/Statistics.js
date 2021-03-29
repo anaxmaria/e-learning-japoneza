@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "zingchart/es6";
 import ZingChart from "zingchart-react";
+import { getAllCourses } from "../../actions/profile";
 //import "zingchart-react/dist/modules/zingchart-depth.min.js";
 import {
   getCourseByAuthor,
@@ -15,12 +16,12 @@ const Statistics = ({
   course: { courses, course, coursesAdded },
   quizz: { quizzAdded },
   assignment: { assignmentsAdded },
-  getCourseByAuthor,
+  getAllCourses,
   getAssignmentByAuthor,
   getQuizzByAuthor,
 }) => {
   useEffect(() => {
-    getCourseByAuthor(user && user.name);
+    getAllCourses();
   }, []);
   useEffect(() => {
     getQuizzByAuthor(user && user.name);
@@ -68,7 +69,7 @@ const Statistics = ({
               {" "}
               <i class="fas fa-book .text-success"></i>
               <div className="content">
-                <h3>{coursesAdded.length} courses</h3>
+                <h3>{courses.length} courses</h3>
               </div>
             </div>
           </div>
@@ -114,7 +115,7 @@ const Statistics = ({
 
 Statistics.propTypes = {
   auth: PropTypes.object.isRequired,
-  getCourseByAuthor: PropTypes.func.isRequired,
+  getAllCourses: PropTypes.func.isRequired,
   course: PropTypes.array.isRequired,
   quizz: PropTypes.object.isRequired,
 };
@@ -125,7 +126,7 @@ const mapStateToProps = (state) => ({
   assignment: state.assignment,
 });
 export default connect(mapStateToProps, {
-  getCourseByAuthor,
+  getAllCourses,
   deleteCourse,
   getQuizzByAuthor,
   getAssignmentByAuthor,

@@ -31,6 +31,7 @@ export default function (state = initialState, action) {
         isAuthenticated: true,
         loading: false,
         user: payload,
+        isAdmin: payload.isAdmin
       };
     case LOGIN_STUDENT_SUCCESS:
     case REGISTER_STUDENT_SUCCESS:

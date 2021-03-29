@@ -19,8 +19,11 @@ router.post("/", authStudent, async (req, res) => {
     description: req.body.description,
   });
   try {
-    const newCourse = await myCourse.save();
-    res.json(newCourse);
+    myCourses = await MyCourse.find({studentName: student.name, courseId: req.body.id})
+    if(myCourses.length == 0){
+      const newCourse = await myCourse.save();
+      res.json(newCourse);
+    }
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
