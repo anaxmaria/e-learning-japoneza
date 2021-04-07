@@ -15,6 +15,7 @@ const MyCourses = ({
   }, []);
   return (
     <div>
+      {window.scrollTo(0, 0)}
       <h1>My Courses</h1>
       <div>
         {myCourses &&

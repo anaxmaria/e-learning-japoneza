@@ -22,6 +22,8 @@ import {
   ADD_ASSIGNMENT,
   GET_ASSIGNMENT_BY_COURSE_NAME,
   GET_ASSIGNMENT_BY_ID,
+  GET_ALL_ASSIGNMENTS,
+  ASSIGNMENT_ERROR,
   ADD_MY_COURSE,
   GET_COURSE_BY_STUDENT_NAME,
   ADD_MY_QUIZ_RESULT,
@@ -40,8 +42,9 @@ export const addCourse = (formData, history) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
-
-    const res = await axios.post("api/courses", formData);
+    //TODO: pt incarcare imagine scoate linia urm
+    const body = {"name": formData.get("name"), "description": formData.get("description")}
+    const res = await axios.post("api/courses", body);
     dispatch({
       type: ADD_COURSE,
       payload: res.data,
@@ -307,6 +310,22 @@ export const getCurrentAssignmentById = (assignmentId) => async (dispatch) => {
     });
   } catch (err) {
     dispatch();
+  }
+};
+
+//Get quizzes
+export const getAllAssignments = () => async (dispatch) => {
+  try {
+    const res = await axios.get("/api/assignments");
+    dispatch({
+      type: GET_ALL_ASSIGNMENTS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: ASSIGNMENT_ERROR,
+      payload: { status: err.response.status },
+    });
   }
 };
 

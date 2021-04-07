@@ -4,6 +4,8 @@ import {
   GET_ASSIGNMENT_BY_ID,
   GET_ASSIGNMENT_BY_AUTHOR,
   DELETE_ASSIGNMENT,
+  GET_ALL_ASSIGNMENTS,
+  ASSIGNMENT_ERROR
 } from "../actions/types";
 
 const initialState = {
@@ -38,6 +40,12 @@ export default function (state = initialState, action) {
       return {
         ...state,
         currentAssignment: payload,
+        loading: false,
+      };
+    case GET_ALL_ASSIGNMENTS:
+      return {
+        ...state,
+        assignments: payload,
         loading: false,
       };
     case DELETE_ASSIGNMENT:

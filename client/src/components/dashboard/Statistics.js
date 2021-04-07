@@ -2,32 +2,32 @@ import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import "zingchart/es6";
 import ZingChart from "zingchart-react";
-import { getAllCourses } from "../../actions/profile";
 //import "zingchart-react/dist/modules/zingchart-depth.min.js";
 import {
-  getCourseByAuthor,
+  getAllCourses,
   deleteCourse,
-  getQuizzByAuthor,
+  getQuizzes,
+  getAllAssignments,
   getAssignmentByAuthor,
 } from "../../actions/profile";
 import { connect } from "react-redux";
 const Statistics = ({
   auth: { user },
   course: { courses, course, coursesAdded },
-  quizz: { quizzAdded },
-  assignment: { assignmentsAdded },
+  quizz: { quizzes },
+  assignment: { assignments, assignmentsAdded },
   getAllCourses,
-  getAssignmentByAuthor,
-  getQuizzByAuthor,
+  getQuizzes,
+  getAllAssignments,
 }) => {
   useEffect(() => {
     getAllCourses();
   }, []);
   useEffect(() => {
-    getQuizzByAuthor(user && user.name);
+    getQuizzes();
   }, []);
   useEffect(() => {
-    getAssignmentByAuthor(user && user.name);
+    getAllAssignments();
   }, []);
   const myData = {
     type: "line",
@@ -78,7 +78,7 @@ const Statistics = ({
               {" "}
               <i class="fas fa-question .text-success"></i>
               <div className="content">
-                <h3>{quizzAdded.length} quizzes</h3>
+                <h3>{quizzes.length} quizzes</h3>
               </div>
             </div>
           </div>
@@ -87,7 +87,7 @@ const Statistics = ({
               {" "}
               <i class="fas fa-user-circle .text-success"></i>
               <div className="content">
-                <h3>6 cursanti</h3>
+                <h3>6 students</h3>
               </div>
             </div>
           </div>
@@ -96,7 +96,7 @@ const Statistics = ({
               {" "}
               <i class="far fa-calendar-check"></i>
               <div className="content">
-                <h3>{assignmentsAdded.length} assignments</h3>
+                <h3>{assignments.length} assignments</h3>
               </div>
             </div>
           </div>
@@ -116,8 +116,11 @@ const Statistics = ({
 Statistics.propTypes = {
   auth: PropTypes.object.isRequired,
   getAllCourses: PropTypes.func.isRequired,
+  getQuizzes: PropTypes.object.isRequired,
+  getAllAssignments: PropTypes.func.isRequired,
   course: PropTypes.array.isRequired,
   quizz: PropTypes.object.isRequired,
+  assignment: PropTypes.object.isRequired,
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
@@ -127,7 +130,6 @@ const mapStateToProps = (state) => ({
 });
 export default connect(mapStateToProps, {
   getAllCourses,
-  deleteCourse,
-  getQuizzByAuthor,
-  getAssignmentByAuthor,
+  getQuizzes,
+  getAllAssignments,
 })(Statistics);

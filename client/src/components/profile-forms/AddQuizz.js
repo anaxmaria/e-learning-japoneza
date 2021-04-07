@@ -24,7 +24,7 @@ const AddQuizz = ({
       <div className="imgLogin">
         <img src={regImg} alt="imgLogin" height="600"></img>
       </div>
-      <h1 className=".text-secondary">Create Your Quizz</h1>
+      <h1 className=".text-secondary">Add a Quiz</h1>
       <form
         className="form"
         onSubmit={(e) => {

@@ -12,6 +12,7 @@ const Dashboard = ({
   }, []);
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       {/* <p className="display-4 py"> */}
       <p className="titleDashboard">
         <i className="fas fa-user"></i> Welcome {user && user.name}

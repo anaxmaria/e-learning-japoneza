@@ -26,7 +26,7 @@ const AddQuestions = ({ quizz: { quizz }, addQuestion }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   return (
     <Fragment>
-      <h1 className=".text-secondary">Add a Question to Quizz</h1>
+      <h1 className=".text-secondary">Add a question to the Quiz</h1>
       <form
         className="form"
         onSubmit={(e) => {

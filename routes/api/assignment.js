@@ -10,6 +10,8 @@ const Assignment = require("../../models/Assignment");
 //@access Private
 router.post("/", auth, async (req, res) => {
   try {
+    //console.log(req.body);
+    //console.log("abc");
     const user = await User.findById(req.user.id).select("-password");
     const newAssignment = new Assignment({
       title: req.body.title,
@@ -19,6 +21,20 @@ router.post("/", auth, async (req, res) => {
 
     const assignment = await newAssignment.save();
     res.json(assignment);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+//@route GET api/assignments
+//@desc Get all assignments
+//@access Private
+
+router.get("/", auth, async (req, res) => {
+  try {
+    const assignments = await Assignment.find();
+    res.json(assignments);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");

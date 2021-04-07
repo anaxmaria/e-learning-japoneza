@@ -25,6 +25,7 @@ const DescriptionOfCourse = ({
   const { id, courseName, description } = formData;
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <div className="courseTitleContainer">
         {course && course.name}
       </div>
@@ -66,6 +67,7 @@ const DescriptionOfCourse = ({
     </Fragment>
   );
 };
+
 
 DescriptionOfCourse.propTypes = {
   getCurrentCourseById: PropTypes.func.isRequired,

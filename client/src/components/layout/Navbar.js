@@ -6,7 +6,7 @@ import { logout } from "../../actions/auth";
 import NotificationSystem from "react-notification-system";
 
 export const Navbar = ({
-  auth: { user, isAuthenticated, loading },
+  auth: { user, isAuthenticated, loading , isAdmin},
   logout,
 }) => {
   const notificationSystem = React.createRef();
@@ -53,7 +53,7 @@ export const Navbar = ({
 
   const authLinks = (
     <ul>
-      {user && user.status === "Developer" ? (
+      {user && isAdmin ? (
         <Fragment>
           <li>
             <Link to="/dashboard">

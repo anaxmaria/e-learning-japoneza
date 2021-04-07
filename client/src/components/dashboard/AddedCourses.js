@@ -2,9 +2,12 @@ import React, { useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import {
   getCourseByAuthor,
+  getAllCourses,
   deleteCourse,
   getQuizzByAuthor,
+  getQuizzes,
   getAssignmentByAuthor,
+  getAllAssignments,
   deleteAssignment,
   deleteQuizz,
 } from "../../actions/profile";
@@ -14,28 +17,28 @@ import { Link } from "react-router-dom";
 const AddedCourses = ({
   auth: { user },
   course: { courses, course, coursesAdded },
-  quizz: { quizzAdded },
-  assignment: { assignmentsAdded },
-  getCourseByAuthor,
-  getAssignmentByAuthor,
-  getQuizzByAuthor,
+  quizz: { quizzes, quizzAdded },
+  assignment: { assignments, assignmentsAdded },
+  getAllCourses,
+  getAllAssignments,
+  getQuizzes,
   deleteCourse,
   deleteAssignment,
   deleteQuizz,
 }) => {
   useEffect(() => {
-    getCourseByAuthor(user && user.name);
+    getAllCourses();
   }, []);
   useEffect(() => {
-    getQuizzByAuthor(user && user.name);
+    getQuizzes();
   }, []);
   useEffect(() => {
-    getAssignmentByAuthor(user && user.name);
+    getAllAssignments();
   }, []);
 
   const myCourses =
-    coursesAdded &&
-    coursesAdded.map((course) => (
+    courses &&
+    courses.map((course) => (
       <tr key={course._id}>
         <td>{course.name}</td>
         <td>
@@ -55,7 +58,7 @@ const AddedCourses = ({
           <button
             onClick={() => {
               deleteCourse(course._id);
-              coursesAdded.splice(coursesAdded.indexOf(course._id), 1);
+              courses.splice(courses.indexOf(course._id), 1);
             }}
             className="btn btn-danger"
           >
@@ -65,8 +68,8 @@ const AddedCourses = ({
       </tr>
     ));
   const myQuizzes =
-    quizzAdded &&
-    quizzAdded.map((quiz) => (
+    quizzes &&
+    quizzes.map((quiz) => (
       <tr key={quiz._id}>
         <td>{quiz.title}</td>
         <td>
@@ -75,8 +78,8 @@ const AddedCourses = ({
         <td>
           <button
             onClick={() => {
-              deleteQuizz(quizzAdded._id);
-              quizzAdded.splice(quizzAdded.indexOf(quiz._id), 1);
+              deleteQuizz(quizzes._id);
+              quizzes.splice(quizzes.indexOf(quiz._id), 1);
             }}
             className="btn btn-danger"
           >
@@ -86,8 +89,8 @@ const AddedCourses = ({
       </tr>
     ));
   const myAssignmets =
-    assignmentsAdded &&
-    assignmentsAdded.map((ass) => (
+    assignments &&
+    assignments.map((ass) => (
       <tr key={ass._id}>
         <td>{ass.title}</td>
         <td>
@@ -97,7 +100,7 @@ const AddedCourses = ({
           <button
             onClick={() => {
               deleteAssignment(ass._id);
-              assignmentsAdded.splice(assignmentsAdded.indexOf(ass._id), 1);
+              assignments.splice(assignments.indexOf(ass._id), 1);
             }}
             className="btn btn-danger"
           >
@@ -109,15 +112,16 @@ const AddedCourses = ({
 
   return (
     <Fragment>
-      <h2 className="titleDashboard">My Added Courses</h2>
+      {window.scrollTo(0, 0)}
+      <h2 className="titleDashboard">Added Courses</h2>
       <table className="table">
         <tbody>{myCourses}</tbody>
       </table>
-      <h2 className="titleDashboard">My Added Quizzes</h2>
+      <h2 className="titleDashboard">Added Quizzes</h2>
       <table className="table">
         <tbody>{myQuizzes}</tbody>
       </table>
-      <h2 className="titleDashboard">My Added Assignments</h2>
+      <h2 className="titleDashboard">Added Assignments</h2>
       <table className="table">
         <tbody>{myAssignmets}</tbody>
       </table>
@@ -128,9 +132,12 @@ const AddedCourses = ({
 AddedCourses.propTypes = {
   auth: PropTypes.object.isRequired,
   getCourseByAuthor: PropTypes.func.isRequired,
+  getAllCourses: PropTypes.func.isRequired,
   deleteCourse: PropTypes.func.isRequired,
   course: PropTypes.array.isRequired,
   quizz: PropTypes.object.isRequired,
+  getQuizzes: PropTypes.object.isRequired,
+  getAllAssignments: PropTypes.object.isRequired,
   deleteAssignment: PropTypes.func.isRequired,
   deleteQuizz: PropTypes.func.isRequired,
 };
@@ -141,10 +148,13 @@ const mapStateToProps = (state) => ({
   assignment: state.assignment,
 });
 export default connect(mapStateToProps, {
+  getAllCourses,
   getCourseByAuthor,
   deleteCourse,
   getQuizzByAuthor,
+  getQuizzes,
   getAssignmentByAuthor,
+  getAllAssignments,
   deleteAssignment,
   deleteCourse,
 })(AddedCourses);

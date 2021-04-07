@@ -33,6 +33,7 @@ const Login = ({ login, isAuthenticated, loginStudent, isAdmin }) => {
 
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <div className="imgLogin">
         <img src={lms} alt="imgLogin" height="300"></img>
       </div>{" "}

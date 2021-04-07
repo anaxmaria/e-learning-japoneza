@@ -41,6 +41,7 @@ const Register = ({ setAlert, register, isAuthenticated, registerStudent }) => {
   }
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <div className="imgLogin">
         <img src={regImg} alt="imgLogin" height="450"></img>
       </div>{" "}
