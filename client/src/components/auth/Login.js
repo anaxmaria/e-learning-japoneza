@@ -25,6 +25,8 @@ const Login = ({ login, isAuthenticated, loginStudent, isAdmin }) => {
   };
 
   //Redirect if logged in
+  //console.log(isAuthenticated);
+  //console.log(isAdmin);
   if (isAuthenticated && isAdmin) {
     return <Redirect to="/dashboard" />;
   } else if (isAuthenticated && !isAdmin) {

@@ -51,7 +51,7 @@ const DescriptionOfCourse = ({
         </div>
         <br /><br />
       <div>
-        <Link
+        {/* <Link
           to={`/student/start-course/${course && course._id}`}
           class="myButton2"
           onClick={() => {
@@ -59,9 +59,9 @@ const DescriptionOfCourse = ({
           }}
         >
           Start Course
-        </Link>
+        </Link> */}
         <Link to={`/student/dashboard`} className="myButton3">
-          Back
+          Back to Dashboard
         </Link>
       </div>
     </Fragment>

@@ -18,12 +18,15 @@ const StartAssignment = ({
       <div class="myText">
         {parse(`${currentAssignment && currentAssignment.problemDescription}`)}
       </div>
-      <form
-        action="https://www.jdoodle.com/api/redirect-to-post/online-java-compiler"
+      {/* <form
+        action="https://hinative.com/en-US/explore/questions/newest?language_id=45"
         method="post"
       >
         <textarea name="initScript" rows="8" cols="120"></textarea>
         <input type="submit" value="Submit" class="btn btn-black" />
+      </form> */}
+      <form action="https://hinative.com/en-US/explore/questions/newest?language_id=45">
+        <input className="myButton3" type="submit" value="Ask natives for help" />
       </form>
     </div>
   );

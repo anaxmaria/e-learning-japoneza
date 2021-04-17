@@ -72,11 +72,22 @@ ul {
 }
 
 img {
-  width: 100%;
+  width: 80%;
 }
 
 .myCourseImg{
   width: 75%;
+}
+
+#imgOtsu{
+  width: 90%;
+  padding-left: 50px;
+  padding-top: 20px;
+}
+
+#otsuText{
+  padding-left: 20px;
+  padding-top: 60px;
 }
 
 /* Utilities */
@@ -828,8 +839,14 @@ ul {
 /*  QuizzBee*/
 @import url("https://fonts.googleapis.com/css?family=Raleway");
 
-* {
+/* * {
   font-family: "Raleway", sans-serif;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+* {
+  font-family: 'Work Sans', sans-serif;
 }
 
 .container {

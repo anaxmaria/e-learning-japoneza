@@ -37,11 +37,26 @@ router.post("/", authStudent, async (req, res) => {
 router.get("/:nameAuth", auth, async (req, res) => {
   console.log("aaaa");
   try {
-    const course = await MyCourse.find({ studentName: req.params.nameAuth });
-    if (!course) {
+    const courses = await Course.find();
+    console.log(courses);
+    const coursesIds = [];
+    courses.forEach(element => {
+      coursesIds.push(element.id);
+    })
+    console.log(coursesIds);
+    const myCourses = await MyCourse.find({ studentName: req.params.nameAuth });
+    const myCoursesFinal = [];
+    myCourses.forEach(element => {
+      console.log(String(element.courseId));
+      if(coursesIds.includes(element.courseId)){
+        console.log("asd")
+        myCoursesFinal.push(element);
+      }
+    })
+    if (!myCoursesFinal) {
       return res.status(404).json({ msg: "Course not found" });
     }
-    res.json(course);
+    res.json(myCoursesFinal);
   } catch (err) {
     console.error(err.message);
     if (err.kind === "ObjectId") {

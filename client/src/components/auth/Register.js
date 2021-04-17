@@ -8,7 +8,7 @@ import { registerStudent } from "../../actions/auth";
 import regImg from "../../img/register7.jpg";
 import PropTypes from "prop-types";
 
-const Register = ({ setAlert, register, isAuthenticated, registerStudent }) => {
+const Register = ({ setAlert, register, isAuthenticated, registerStudent, isAdmin }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -34,9 +34,9 @@ const Register = ({ setAlert, register, isAuthenticated, registerStudent }) => {
     }
   };
 
-  if (isAuthenticated && status == "Developer") {
+  if (isAuthenticated && isAdmin) {
     return <Redirect to="/dashboard" />;
-  } else if (isAuthenticated && status == "Student or Learning") {
+  } else if (isAuthenticated && !isAdmin) {
     return <Redirect to="/student/dashboard" />;
   }
   return (
@@ -91,6 +91,7 @@ const Register = ({ setAlert, register, isAuthenticated, registerStudent }) => {
             <option value="0">Select Sex</option>
             <option value="Developer">M</option>
             <option value="Student or Learning">F</option>
+            <option value="Not Saying">Prefer not to say</option>
           </select>
         </div>
         <input type="submit" className="btn btn-secondary" value="Register" />
@@ -106,9 +107,11 @@ Register.propTypes = {
   register: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   registerStudent: PropTypes.func.isRequired,
+  isAdmin: PropTypes.bool
 };
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
+  isAdmin: state.auth.isAdmin,
 });
 export default connect(mapStateToProps, {
   setAlert,

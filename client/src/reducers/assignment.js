@@ -48,6 +48,11 @@ export default function (state = initialState, action) {
         assignments: payload,
         loading: false,
       };
+    case ASSIGNMENT_ERROR:
+      return {
+        ...state,
+        loading: false,
+      };
     case DELETE_ASSIGNMENT:
       return {
         ...state,

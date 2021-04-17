@@ -25,6 +25,8 @@ export const loadUser = () => async (dispatch) => {
 
   try {
     const res = await axios.get("/api/auth");
+    
+    
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -171,7 +173,6 @@ export const loginStudent = (email, password) => async (dispatch) => {
         payload: res.data,
       });
       
-      dispatch(loadUser());
       dispatch(loadStudent());
     }
   } catch (err) {

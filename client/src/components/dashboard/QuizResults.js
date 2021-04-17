@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { getQuizzResultByStudent } from "../../actions/profile";
 import { connect } from "react-redux";
 import Moment from "react-moment";
+import otsu from "../../img/otsu.jpeg";
 
 const QuizResults = ({
   getQuizzResultByStudent,
@@ -14,7 +15,7 @@ const QuizResults = ({
   }, []);
   return (
     <Fragment>
-      <h2 className="titleDashboard">Quiz Results</h2>
+      <h2 className="titleDashboard">Here are your quiz results:</h2>
       <table className="table">
         <thead>
           <tr>
@@ -38,6 +39,11 @@ const QuizResults = ({
             ))}
         </tbody>
       </table>
+      <div className="imgOtsu">
+        <img src={otsu} id="imgOtsu" alt="imgOtsu" height="500" width="100"></img>
+        <br />
+        <h3 id="otsuText">おつかれさまでした！You did well! Next time I'm sure you'll do even better.</h3>
+      </div>
     </Fragment>
   );
 };

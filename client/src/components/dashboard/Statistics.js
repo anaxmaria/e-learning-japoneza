@@ -52,8 +52,9 @@ const Statistics = ({
       text: "Users by gender",
     },
     series: [
-      { values: [3], text: "M" },
-      { values: [3], text: "F" },
+      { values: [2], text: "M" },
+      { values: [4], text: "F" },
+      { values: [1], text: "Others" },
     ],
   };
   return (
@@ -87,7 +88,7 @@ const Statistics = ({
               {" "}
               <i class="fas fa-user-circle .text-success"></i>
               <div className="content">
-                <h3>6 students</h3>
+                <h3>7 students</h3>
               </div>
             </div>
           </div>

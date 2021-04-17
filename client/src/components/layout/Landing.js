@@ -3,10 +3,10 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
-export const Landing = ({ auth: { user, isAuthenticated } }) => {
-  if (isAuthenticated && user.status === "Developer") {
+export const Landing = ({ auth: { user, isAuthenticated, isAdmin } }) => {
+  if (isAuthenticated && isAdmin) {
     return <Redirect to="/dashboard" />;
-  } else if (isAuthenticated && user.status === "Student or Learning") {
+  } else if (isAuthenticated && !isAdmin) {
     return <Redirect to="/student/dashboard" />;
   }
   return (
@@ -35,8 +35,10 @@ export const Landing = ({ auth: { user, isAuthenticated } }) => {
 };
 Landing.propTypes = {
   auth: PropTypes.object.isRequired,
+  isAdmin: PropTypes.bool
 };
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  isAdmin: state.auth.isAdmin,
 });
 export default connect(mapStateToProps)(Landing);

@@ -38,10 +38,10 @@ if (localStorage.token) {
 
 const App = () => {
   useEffect(() => {
-    store.dispatch(loadUser());
+    store.dispatch(loadUser(null));
   }, []);
   useEffect(() => {
-    store.dispatch(loadStudent());
+    store.dispatch(loadStudent(null));
   }, []);
 
   return (

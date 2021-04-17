@@ -78,7 +78,7 @@ const AddedCourses = ({
         <td>
           <button
             onClick={() => {
-              deleteQuizz(quizzes._id);
+              deleteQuizz(quiz._id);
               quizzes.splice(quizzes.indexOf(quiz._id), 1);
             }}
             className="btn btn-danger"
@@ -157,4 +157,5 @@ export default connect(mapStateToProps, {
   getAllAssignments,
   deleteAssignment,
   deleteCourse,
+  deleteQuizz
 })(AddedCourses);
