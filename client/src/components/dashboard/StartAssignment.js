@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentAssignmentById } from "../../actions/profile";
 import parse from "html-react-parser";
+import { Link } from "react-router-dom";
+
 const StartAssignment = ({
   match,
   getCurrentAssignmentById,
@@ -25,9 +27,13 @@ const StartAssignment = ({
         <textarea name="initScript" rows="8" cols="120"></textarea>
         <input type="submit" value="Submit" class="btn btn-black" />
       </form> */}
-      <form action="https://hinative.com/en-US/explore/questions/newest?language_id=45">
+      <form action="https://hinative.com/en-US" target="_blank">
         <input className="myButton3" type="submit" value="Ask natives for help" />
       </form>
+      <br></br>
+      <Link to={`/student/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </div>
   );
 };

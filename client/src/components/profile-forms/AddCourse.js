@@ -90,6 +90,9 @@ const AddCourse = ({ addCourse, history, getCourseById, match }) => {
           <input type="submit" class="btn btn-dark" />
         </div>
       </form>
+      <Link to={`/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </Fragment>
   );
 };

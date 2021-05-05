@@ -1,13 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Course = require("../../models/Course");
-const auth = require("../../middleware/auth");
 const authStudent = require("../../middleware/authStudent");
 
 //@route POST api/courses
 //@desc Register a course
 //@access Private
-router.post("/", auth, async (req, res) => {
+router.post("/", authStudent, async (req, res) => {
   try {
   //console.log(req.body);
   const course = new Course({
@@ -40,7 +39,7 @@ router.get("/", authStudent, async (req, res) => {
 //@route PUT api/courses/:id
 //@desc Update a course
 //@access Private
-router.put("/:id", auth, async (req, res) => {
+router.put("/:id", authStudent, async (req, res) => {
   try {
     let course = await Course.findById(req.params.id);
     if (course) {
@@ -111,7 +110,7 @@ router.get("/:name", authStudent, async (req, res) => {
 //@desc Delete a  post
 //@access Private
 
-router.delete("/:id", auth, async (req, res) => {
+router.delete("/:id", authStudent, async (req, res) => {
   try {
     const course = await Course.findById(req.params.id);
 

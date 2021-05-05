@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import { addAssignment } from "../../actions/profile";
 // import regImg from "../../img/img3.png";
 import { Editor } from "@tinymce/tinymce-react";
+import { Link } from "react-router-dom";
+
 const AddAssignment = ({ addAssignment }) => {
   // const [formData, setFormData] = useState({
   //   title: "",
@@ -84,6 +86,9 @@ const AddAssignment = ({ addAssignment }) => {
         />
         <input type="submit" className="btn btn-primary my-1" />
       </form>
+      <Link to={`/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </Fragment>
   );
 };

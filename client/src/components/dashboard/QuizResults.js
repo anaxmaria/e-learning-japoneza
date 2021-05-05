@@ -4,6 +4,7 @@ import { getQuizzResultByStudent } from "../../actions/profile";
 import { connect } from "react-redux";
 import Moment from "react-moment";
 import otsu from "../../img/otsu.jpeg";
+import { Link } from "react-router-dom";
 
 const QuizResults = ({
   getQuizzResultByStudent,
@@ -15,6 +16,7 @@ const QuizResults = ({
   }, []);
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <h2 className="titleDashboard">Here are your quiz results:</h2>
       <table className="table">
         <thead>
@@ -44,6 +46,10 @@ const QuizResults = ({
         <br />
         <h3 id="otsuText">おつかれさまでした！You did well! Next time I'm sure you'll do even better.</h3>
       </div>
+      
+      <Link to={`/student/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </Fragment>
   );
 };

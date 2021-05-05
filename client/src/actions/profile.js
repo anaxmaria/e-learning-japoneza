@@ -344,7 +344,10 @@ export const addMyCourse = (formData) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    dispatch();
+    dispatch({
+      type: COURSES_ERROR,
+      payload: { status: err.response.status },
+    });
   }
 };
 //Get course by student name

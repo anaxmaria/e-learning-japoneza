@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Student = require("../../models/Student");
-const auth = require("../../middleware/auth");
 const authStudent = require("../../middleware/authStudent");
 const QuizResult = require("../../models/QuizResult");
 
@@ -29,7 +28,7 @@ router.post("/", authStudent, async (req, res) => {
 //@desc Get course by student name
 //@access Private
 
-router.get("/:nameAuth", auth, async (req, res) => {
+router.get("/:nameAuth", authStudent, async (req, res) => {
   console.log("aaaa");
   try {
     const quizResult = await QuizResult.find({

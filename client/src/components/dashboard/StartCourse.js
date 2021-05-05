@@ -15,9 +15,8 @@ const StartCourse = ({ match, getCurrentCourseById, course }) => {
       <div className="courseTitleContainer">
         {/*video was here*/}
         <div className="myText">
-          <br />
-          If you want to practice what you've learned in this course solve the
-          quizzes and assignments below!
+          <p>If you want to practice what you've learned in this course solve the
+          quizzes and assignments below!</p>
         </div>
         <div>
           <Link

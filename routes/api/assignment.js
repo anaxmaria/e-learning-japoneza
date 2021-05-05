@@ -1,18 +1,17 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../../middleware/auth");
 const authStudent = require("../../middleware/authStudent");
-const User = require("../../models/User");
+const Student = require("../../models/Student");
 const Assignment = require("../../models/Assignment");
 
 //@route POST api/assignment
 //@desc Create one assignment
 //@access Private
-router.post("/", auth, async (req, res) => {
+router.post("/", authStudent, async (req, res) => {
   try {
     //console.log(req.body);
     //console.log("abc");
-    const user = await User.findById(req.user.id).select("-password");
+    const student = await Student.findById(req.student.id).select("-password");
     const newAssignment = new Assignment({
       title: req.body.title,
       courseName: req.body.courseName,
@@ -31,7 +30,7 @@ router.post("/", auth, async (req, res) => {
 //@desc Get all assignments
 //@access Private
 
-router.get("/", auth, async (req, res) => {
+router.get("/", authStudent, async (req, res) => {
   try {
     const assignments = await Assignment.find();
     res.json(assignments);
@@ -42,7 +41,7 @@ router.get("/", auth, async (req, res) => {
 });
 
 //Get assignment by course name
-router.get("/assignment/:name", auth, async (req, res) => {
+router.get("/assignment/:name", authStudent, async (req, res) => {
   console.log(req.params.name);
   try {
     const assignment = await Assignment.find({ courseName: req.params.name });
@@ -82,7 +81,7 @@ router.get("/:id", authStudent, async (req, res) => {
   }
 });
 
-router.delete("/:id", auth, async (req, res) => {
+router.delete("/:id", authStudent, async (req, res) => {
   try {
     const assignment = await Assignment.findById(req.params.id);
 

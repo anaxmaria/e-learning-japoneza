@@ -4,7 +4,6 @@ const socketio = require("socket.io");
 const http = require("http");
 const { constants } = require("buffer");
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
-const { use } = require("./routes/api/user");
 
 const app = express();
 //socket
@@ -26,8 +25,6 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Credentials", true);
   next();
 });
-app.use("/api/user", require("./routes/api/user"));
-app.use("/api/auth", require("./routes/api/auth"));
 
 app.use("/api/students", require("./routes/api/students"));
 app.use("/api/studentsAuth", require("./routes/api/authStudents"));

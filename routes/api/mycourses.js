@@ -2,9 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Course = require("../../models/Course");
 const MyCourse = require("../../models/MyCourses");
-const User = require("../../models/User");
 const Student = require("../../models/Student");
-const auth = require("../../middleware/auth");
 const authStudent = require("../../middleware/authStudent");
 
 //@route POST api/mycourses
@@ -34,7 +32,7 @@ router.post("/", authStudent, async (req, res) => {
 //@desc Get course by student name
 //@access Private
 
-router.get("/:nameAuth", auth, async (req, res) => {
+router.get("/:nameAuth", authStudent, async (req, res) => {
   console.log("aaaa");
   try {
     const courses = await Course.find();

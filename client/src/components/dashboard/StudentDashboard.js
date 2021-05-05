@@ -21,8 +21,9 @@ const StudentDashboard = ({
   const [enteredFilter, setEnteredFilter] = useState("");
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <p className="lead">
-        <i className="fas fa-user-ninja"></i> Welcome {user && user.name}
+        <i className="fas fa-user-ninja"></i> Welcome {user && user.name}! 元気ですか？
       </p>
       <div className="sidenav">
         <Link to="/student/my-courses">

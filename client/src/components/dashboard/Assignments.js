@@ -20,7 +20,7 @@ const Assignments = ({
           <tr>
             <th scope="col">#</th>
             <th scope="col">Assignment Name</th>
-            <th scope="col">Assignment Author</th>
+            <th scope="col">Try solving it!</th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -35,7 +35,7 @@ const Assignments = ({
                   to={`/student/start-assignment/${assignment._id}`}
                   class="btn btn-danger"
                 >
-                  Solve Challenge
+                  Go to homework
                 </Link>
               </td>
             </tr>
@@ -43,10 +43,10 @@ const Assignments = ({
         </tbody>
       </table>
       <Link
-        to={`/student/start-course/${course && course._id}`}
+        to={`/student/describe-course/${course._id}`}
         className="myButton3"
       >
-        Back
+        Back to the course
       </Link>
     </Fragment>
   );

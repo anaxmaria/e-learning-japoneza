@@ -53,6 +53,9 @@ const AddQuizz = ({
         <input type="submit" className="btn btn-primary my-1" />
       </form>
       <AddQuestions />
+      <Link to={`/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </Fragment>
   );
 };

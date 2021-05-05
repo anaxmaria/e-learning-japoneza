@@ -125,6 +125,10 @@ const AddedCourses = ({
       <table className="table">
         <tbody>{myAssignmets}</tbody>
       </table>
+      
+      <Link to={`/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </Fragment>
   );
 };

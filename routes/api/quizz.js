@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const auth = require("../../middleware/auth");
+const auth = require("../../middleware/authStudent");
 const Quizz = require("../../models/Quizz");
-const User = require("../../models/User");
+const Student = require("../../models/Student");
 
 //@route POST api/quizzes
 //@desc Create one quiz
 //@access Private
 router.post("/", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const student = await Student.findById(req.student.id).select("-password");
     const newQuizz = new Quizz({
       title: req.body.title,
       courseName: req.body.courseName,
@@ -28,7 +28,7 @@ router.post("/", auth, async (req, res) => {
 //@access Private
 router.post("/add", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const student = await Student.findById(req.student.id).select("-password");
     const newQuizz = new Quizz({
       title: req.body.title,
       questions: req.body.questions,
@@ -47,7 +47,7 @@ router.post("/add", auth, async (req, res) => {
 //@access Private
 router.post("/question/:id", auth, async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select("-password");
+    const student = await Student.findById(req.student.id).select("-password");
     const quizz = await Quizz.findById(req.params.id);
 
     const newQuestion = {

@@ -882,11 +882,12 @@ ul {
 
 .title {
   position: relative;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgb(124, 42, 97);
   color: rgb(255, 255, 255);
   padding: 20px;
   font-size: 1.8em;
   border-radius: 5px;
+  margin-bottom: 40px;
 }
 
 .question {
@@ -907,7 +908,7 @@ ul {
 .answerBtn {
   position: relative;
   padding: 10px;
-  background-color: rgb(250, 151, 37);
+  background-color: #5a0b99a3;
   display: inline-block;
   margin: 10px;
   outline: none;
@@ -919,8 +920,13 @@ ul {
   cursor: pointer;
 }
 
+.answerBtn:hover {
+  background-color: #96138f;
+  color: white;
+}
+
 .score-board {
-  position: relative;
+  position: initial;
   height: 700px;
 }
 
@@ -969,22 +975,22 @@ ul {
 }
 
 .myButton {
-  background-color: #f64b3c;
+  background-color: #c39eec;
   border-radius: 28px;
-  border: 1px solid #c81912;
+  border: 1px solid #b312c8;
   display: inline-block;
   cursor: pointer;
-  color: #ffffff;
+  color: #410450;
   font-family: Arial;
   font-size: 15px;
   padding: 16px 31px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #9d0b0b;
   position: relative;
-  left: 25%;
+  left: 20%;
 }
 .myButton:hover {
-  background-color: #f64b3c;
+  background-color: #96138f;
   color: white;
 }
 .myButton:active {
@@ -1003,7 +1009,7 @@ ul {
   text-align: center;
   font-size: x-large;
   color: white;
-  background-color: #393e46;
+  background-color: #735573;
   text-align: center;
 }
 
@@ -1169,15 +1175,34 @@ ul {
   color: black;
   font-size: x-large;
   text-align: left;
+  margin-bottom: 30px;
+  border-style: groove;
+  border-color: plum;
+  padding: 20px;
 }
+
 .myText2 {
   color: black;
   font-size: x-large;
   text-align: left;
 }
+
+.myText3 {
+  color: black;
+  text-align: left;
+  margin-bottom: 30px;
+  border-style: groove;
+  border-color: plum;
+  padding-left: 30px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-right: 30px;
+}
+
 .myDiv {
   text-align: left;
 }
+
 .myButton2 {
   background-color: #f64b3c;
   border-radius: 28px;
@@ -1231,7 +1256,7 @@ ul {
 }
 
 .myButton3 {
-  background-color: #393e46;
+  background-color: #b05592;
   border-radius: 28px;
   border: 1px solid #393e46;
   display: inline-block;
@@ -1243,10 +1268,10 @@ ul {
   text-decoration: none;
   text-shadow: 0px 1px 0px #070707;
   position: relative;
-  left: 45%;
+  left: 40%;
 }
 .myButton3:hover {
-  background-color: #393e46;
+  background-color: #6e1a52;
   color: white;
 }
 .badge {
@@ -1255,7 +1280,7 @@ ul {
   right: -10px;
   padding: 5px 10px;
   border-radius: 50%;
-  background: #d63447;
+  background: #f85c7d;
   color: white;
   font-size: medium;
 }

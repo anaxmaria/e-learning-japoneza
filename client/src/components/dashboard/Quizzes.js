@@ -35,7 +35,7 @@ const Quizzes = ({
                   to={`/student/start-quiz/${quizz._id}`}
                   class="btn btn-danger"
                 >
-                  Start Quizz
+                  Start Quiz
                 </Link>
               </td>
             </tr>
@@ -43,10 +43,10 @@ const Quizzes = ({
         </tbody>
       </table>
       <Link
-        to={`/student/start-course/${course && course._id}`}
+        to={`/student/describe-course/${course._id}`}
         className="myButton3"
       >
-        Back
+        Back to the course
       </Link>
     </Fragment>
   );

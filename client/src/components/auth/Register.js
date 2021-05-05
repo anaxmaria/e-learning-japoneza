@@ -3,12 +3,11 @@ import { connect } from "react-redux";
 import { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
-import { register } from "../../actions/auth";
 import { registerStudent } from "../../actions/auth";
 import regImg from "../../img/register7.jpg";
 import PropTypes from "prop-types";
 
-const Register = ({ setAlert, register, isAuthenticated, registerStudent, isAdmin }) => {
+const Register = ({ setAlert, isAuthenticated, registerStudent, isAdmin }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,12 +24,7 @@ const Register = ({ setAlert, register, isAuthenticated, registerStudent, isAdmi
     if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
-      console.log(status);
-      if (status == "Developer") {
-        register({ name, email, password});
-      } else {
         registerStudent({ name, email, password});
-      }
     }
   };
 
@@ -104,7 +98,6 @@ const Register = ({ setAlert, register, isAuthenticated, registerStudent, isAdmi
 };
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
-  register: PropTypes.func.isRequired,
   isAuthenticated: PropTypes.bool,
   registerStudent: PropTypes.func.isRequired,
   isAdmin: PropTypes.bool
@@ -115,6 +108,5 @@ const mapStateToProps = (state) => ({
 });
 export default connect(mapStateToProps, {
   setAlert,
-  register,
   registerStudent,
 })(Register);

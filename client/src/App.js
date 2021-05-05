@@ -20,7 +20,6 @@ import Statistics from "./components/dashboard/Statistics";
 
 import { Provider } from "react-redux";
 import store from "./store";
-import { loadUser } from "./actions/auth";
 import { loadStudent } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import AddedCourses from "./components/dashboard/AddedCourses";
@@ -37,9 +36,6 @@ if (localStorage.token) {
 }
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadUser(null));
-  }, []);
   useEffect(() => {
     store.dispatch(loadStudent(null));
   }, []);

@@ -29,9 +29,8 @@ const DescriptionOfCourse = ({
       <div className="courseTitleContainer">
         {course && course.name}
       </div>
-      <div>{parse(`${course && course.description}`)}</div>
+      <div className="myText3">{parse(`${course && course.description}`)}</div>
       <div className="myText">
-          <br />
           If you want to practice what you've learned in this course solve the
           quizzes and assignments below!
         </div>
@@ -51,15 +50,6 @@ const DescriptionOfCourse = ({
         </div>
         <br /><br />
       <div>
-        {/* <Link
-          to={`/student/start-course/${course && course._id}`}
-          class="myButton2"
-          onClick={() => {
-            addMyCourse(formData);
-          }}
-        >
-          Start Course
-        </Link> */}
         <Link to={`/student/dashboard`} className="myButton3">
           Back to Dashboard
         </Link>

@@ -16,6 +16,7 @@ const MyCourses = ({
   return (
     <div>
       {window.scrollTo(0, 0)}
+      <div>
       <h1>My Courses</h1>
       <div>
         {myCourses &&
@@ -38,6 +39,12 @@ const MyCourses = ({
             </div>
           ))}
       </div>
+      </div>
+      <br></br>
+      <br></br>
+      <Link to={`/student/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
     </div>
   );
 };
