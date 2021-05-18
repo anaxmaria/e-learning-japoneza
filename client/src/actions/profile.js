@@ -97,6 +97,7 @@ export const getCourseById = (id) => async (dispatch) => {
       type: GET_COURSE_BY_ID,
       payload: res.data,
     });
+    return res;
   } catch (err) {
     dispatch({
       type: COURSES_ERROR,

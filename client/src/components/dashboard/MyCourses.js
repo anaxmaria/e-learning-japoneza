@@ -18,6 +18,11 @@ const MyCourses = ({
       {window.scrollTo(0, 0)}
       <div>
       <h1>My Courses</h1>
+      <br></br>
+      <Link to={`/student/dashboard`} className="myButton3">
+          Back to Dashboard
+      </Link>
+      <br></br>
       <div>
         {myCourses &&
           myCourses.map((result) => (
@@ -41,10 +46,7 @@ const MyCourses = ({
       </div>
       </div>
       <br></br>
-      <br></br>
-      <Link to={`/student/dashboard`} className="myButton3">
-          Back to Dashboard
-      </Link>
+      
     </div>
   );
 };

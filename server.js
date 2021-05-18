@@ -10,9 +10,9 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-//Connect DB
+//connecting the data base
 connectDB();
-//Init middleware
+//initializing middleware
 app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => res.send("API Running"));
@@ -28,7 +28,7 @@ app.use(function (req, res, next) {
 
 app.use("/api/students", require("./routes/api/students"));
 app.use("/api/studentsAuth", require("./routes/api/authStudents"));
-
+app.use("/api/posts", require("./routes/api/posts"));
 app.use("/api/courses", require("./routes/api/courses"));
 
 app.use("/api/quizzes", require("./routes/api/quizz"));

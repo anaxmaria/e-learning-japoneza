@@ -20,7 +20,7 @@ const Quizzes = ({
           <tr>
             <th scope="col">#</th>
             <th scope="col">Quiz Name</th>
-            <th scope="col">Quiz Author</th>
+            <th scope="col">Test your knowledge!</th>
             <th scope="col"></th>
           </tr>
         </thead>

@@ -78,14 +78,14 @@ const AddCourse = ({ addCourse, history, getCourseById, match }) => {
             }
           />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="file">Choose file to upload</label>
           <input
             type="file"
             name="video"
             onChange={(e) => setFile(e.target.files[0])}
           />
-        </div>
+        </div> */}
         <div>
           <input type="submit" class="btn btn-dark" />
         </div>

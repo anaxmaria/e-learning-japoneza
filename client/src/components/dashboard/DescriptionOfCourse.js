@@ -2,6 +2,8 @@ import React, { useEffect, Fragment, useState } from "react";
 import { connect } from "react-redux";
 import { getCourseById, getCurrentCourseById } from "../../actions/profile";
 import PropTypes from "prop-types";
+import CommentItem from "../posts/CommentItem";
+import PostItem from "../posts/PostItem";
 import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import { addMyCourse } from "../../actions/profile";
@@ -49,6 +51,15 @@ const DescriptionOfCourse = ({
           </Link>
         </div>
         <br /><br />
+        <br />
+        {course && <PostItem courseId={course._id} />}
+        <br />
+        <div className="posts">
+          {course &&
+            course.comment.map((comm) => (
+              <CommentItem key={comm._id} comm={comm} courseId={course._id} />
+            ))}
+        </div>
       <div>
         <Link to={`/student/dashboard`} className="myButton3">
           Back to Dashboard

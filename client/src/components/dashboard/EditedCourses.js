@@ -8,19 +8,28 @@ import { getCourseById } from "../../actions/profile";
 import { Editor } from "@tinymce/tinymce-react";
 
 const AddCourse = ({
+  courseEdit,
   course: { course },
   getCourseById,
-  match,
-  history,
   updateCourse,
+  history,
+  match,
 }) => {
   const inputRef = useRef();
-  useEffect(() => {
-    getCourseById(match.params.id);
+  useEffect( () => {
+    const result = getCourseById(match.params.id);
+    console.log(match.params.id);
+    
   }, [getCourseById, match.params.id]);
   const [name, setName] = useState(course && course.name);
   const [description, setDescription] = useState(course && course.description);
   const [file, setFile] = useState();
+
+  function componentDidUpdate(){
+    setName(course.name);
+    setDescription(course.description);
+  }
+
   return (
     <Fragment>
       {" "}
@@ -86,14 +95,14 @@ const AddCourse = ({
             setDescription(e.target.getContent({ format: "raw" }))
           }
         />
-        <div>
+        {/* <div>
           <label htmlFor="file">Choose file to upload</label>
           <input
             type="file"
             name="video"
             onChange={(e) => setFile(e.target.files[0])}
           />
-        </div>
+        </div> */}
         <div>
           <input type="submit" class="btn btn-dark" />
         </div>

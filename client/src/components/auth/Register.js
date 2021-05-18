@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { registerStudent } from "../../actions/auth";
-import regImg from "../../img/register7.jpg";
+import regImg from "../../img/register8.png";
 import PropTypes from "prop-types";
 
 const Register = ({ setAlert, isAuthenticated, registerStudent, isAdmin }) => {

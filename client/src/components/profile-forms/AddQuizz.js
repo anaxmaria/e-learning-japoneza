@@ -5,7 +5,7 @@ import { Link, withRouter } from "react-router-dom";
 import { addQuizz, getQuizzes } from "../../actions/profile";
 import AddQuestions from "./AddQuestions";
 import { addQuestion } from "../../actions/profile";
-import regImg from "../../img/quizz.jpg";
+import regImg from "../../img/quiz3.jpg";
 
 const AddQuizz = ({
   addQuizz,

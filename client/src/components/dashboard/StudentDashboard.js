@@ -89,7 +89,6 @@ const StudentDashboard = ({
                 <div className="text-black">
                   <strong className="courseTitle">{course.name}</strong>
                   <br />
-                  <strong className="courseAuthor">{course.author}</strong>
                   <br />
 
                   <Link
