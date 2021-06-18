@@ -14,9 +14,10 @@ const Dashboard = ({
     <Fragment>
       {window.scrollTo(0, 0)}
       {/* <p className="display-4 py"> */}
-      <p className="titleDashboard">
+      <h1 className="titleDashboard">
         <i className="fas fa-user-ninja"></i> Welcome {user && user.name}! 元気ですか？
-      </p>
+      </h1>
+      <br></br>
       <Fragment>
           <Statistics/>
       </Fragment>

@@ -4,7 +4,7 @@ import { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { registerStudent } from "../../actions/auth";
-import regImg from "../../img/register8.png";
+import regImg from "../../img/Work_from_home.jpg";
 import PropTypes from "prop-types";
 
 const Register = ({ setAlert, isAuthenticated, registerStudent, isAdmin }) => {
@@ -41,8 +41,14 @@ const Register = ({ setAlert, isAuthenticated, registerStudent, isAdmin }) => {
       </div>{" "}
       <h1 className=".text-secondary">
         {" "}
-        <i className="fas fa-user-ninja"></i> Sign Up
+        <i className="fas fa-user-ninja"></i> Welcome to PeraPera! 
       </h1>
+      <br></br>
+      <h5>
+        This app is for those who want to learn Japanese!
+      </h5>
+      <br></br>
+      <h2>Would you like to register? </h2>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
@@ -88,10 +94,12 @@ const Register = ({ setAlert, isAuthenticated, registerStudent, isAdmin }) => {
             <option value="Not Saying">Prefer not to say</option>
           </select>
         </div>
+        <br></br>
         <input type="submit" className="btn btn-secondary" value="Register" />
       </form>
+      <br></br>
       <p className="my-1">
-        Already have an account? <Link to="/login">Sign In</Link>
+        Do you already have an account? <Link to="/login">Log In Here!</Link>
       </p>
     </Fragment>
   );

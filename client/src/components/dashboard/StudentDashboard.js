@@ -38,6 +38,7 @@ const StudentDashboard = ({
           <input
             type="text"
             name="search"
+            autocomplete="off"
             className="form-control"
             size="70"
             value={enteredFilter}

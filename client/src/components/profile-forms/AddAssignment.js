@@ -23,7 +23,7 @@ const AddAssignment = ({ addAssignment }) => {
       {" "}
       <h1 class=".text-secondary">
         {" "}
-        <i class="fas fa-keyboard"></i> &nbsp; Add Your Assignment
+        <i class="fas fa-keyboard"></i> &nbsp; Add a new Assignment
       </h1>
       {/* <div className="imgLogin">
         <img src={regImg} alt="imgLogin" height="550"></img>

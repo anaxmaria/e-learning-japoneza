@@ -17,7 +17,8 @@ const MyCourses = ({
     <div>
       {window.scrollTo(0, 0)}
       <div>
-      <h1>My Courses</h1>
+      <h1>Courses History</h1>
+      <h3>Here you can find the courses you have already read!</h3>
       <br></br>
       <Link to={`/student/dashboard`} className="myButton3">
           Back to Dashboard

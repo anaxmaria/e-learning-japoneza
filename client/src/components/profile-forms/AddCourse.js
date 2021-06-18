@@ -20,7 +20,7 @@ const AddCourse = ({ addCourse, history, getCourseById, match }) => {
       {" "}
       <h1 class=".text-secondary">
         {" "}
-        <i class="fas fa-laptop-code text-secondary"></i> &nbsp; Add Your Course
+        <i class="fas fa-laptop-code text-secondary"></i> &nbsp; Add a new course here
       </h1>
       <form
         class="form"

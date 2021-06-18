@@ -14,6 +14,7 @@ const Quizzes = ({
   }, []);
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <div class="lead">List of Quizzes</div>
       <table class="table table-hover table-dark">
         <thead>

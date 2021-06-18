@@ -14,6 +14,7 @@ const Assignments = ({
   }, []);
   return (
     <Fragment>
+      {window.scrollTo(0, 0)}
       <div class="lead">List of Assignments</div>
       <table class="table table-hover table-dark">
         <thead>

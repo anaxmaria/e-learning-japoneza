@@ -78,8 +78,12 @@ const history = useHistory();
       </div>{" "}
       <h1 className=".text-secondary">
         {" "}
-        <i className="fas fa-user-ninja"></i> Sign In
+        <i className="fas fa-user-ninja"></i> Welcome back!
       </h1>
+      <br></br>
+      <h4>
+        Log in to get back to studying Japanese!
+      </h4>
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <input
@@ -101,10 +105,12 @@ const history = useHistory();
             minLength="6"
           />
         </div>
+        <br></br>
         <input type="submit" className="btn btn-secondary" value="Login" />
       </form>
+      <br></br>
       <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link>
+        You don't have an account? <Link to="/register">Sign Up Here!</Link>
       </p>
     </Fragment>
   );

@@ -24,7 +24,7 @@ const AddQuizz = ({
       <div className="imgLogin">
         <img src={regImg} alt="imgLogin" height="600"></img>
       </div>
-      <h1 className=".text-secondary">Add a Quiz</h1>
+      <h1 className=".text-secondary">Add a new quiz here</h1>
       <form
         className="form"
         onSubmit={(e) => {
@@ -50,6 +50,8 @@ const AddQuizz = ({
             onChange={(e) => onChange(e)}
           />
         </div>
+        <br></br>
+        <p>Create the quiz first!</p>
         <input type="submit" className="btn btn-primary my-1" />
       </form>
       <AddQuestions />
