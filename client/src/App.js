@@ -15,6 +15,7 @@ import Quizzes from "./components/dashboard/Quizzes";
 import StartQuiz from "./components/dashboard/StartQuiz";
 import StartCourse from "./components/dashboard/StartCourse";
 import Statistics from "./components/dashboard/Statistics";
+import EditProfile from "./components/dashboard/EditProfile";
 
 //Redux
 
@@ -114,6 +115,11 @@ const App = () => {
                 exact
                 path="/student/quiz-result"
                 component={QuizResults}
+              />
+              <PrivateRoute
+                exact
+                path="/edit-profile"
+                component={EditProfile}
               />
             </Switch>
           </section>

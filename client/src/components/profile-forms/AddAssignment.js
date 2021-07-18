@@ -38,6 +38,7 @@ const AddAssignment = ({ addAssignment }) => {
         <div className="form-group">
           <input
             type="text"
+            autocomplete="off"
             placeholder="Assignment Title"
             name="title"
             value={title}

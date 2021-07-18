@@ -81,7 +81,7 @@ export const Navbar = ({
           </li>
           <li>
             <Link to="/student/dashboard">
-              <i className="fas fa-user-ninja"></i>
+              <i className="fas fa-atlas"></i>
               <span className=".text-light"> Dashboard</span>
             </Link>
           </li>
@@ -93,6 +93,13 @@ export const Navbar = ({
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className=".text-light"> Logout</span>
         </a>
+      </li>
+
+      <li>
+        <Link to="/edit-profile">
+            <i className="fas fa-user-ninja"></i>
+            <span className=".text-light"> Edit Profile</span>
+        </Link>
       </li>
     </ul>
   );

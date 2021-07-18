@@ -35,6 +35,7 @@ const AddQuizz = ({
         <div className="form-group">
           <input
             type="text"
+            autocomplete="off"
             placeholder="Quizz Title"
             name="title"
             value={title}

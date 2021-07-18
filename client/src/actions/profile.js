@@ -32,6 +32,9 @@ import {
   GET_ASSIGNMENT_BY_AUTHOR,
   DELETE_QUIZZ,
   DELETE_ASSIGNMENT,
+  CHANGE_PASSWORD,
+  CHANGE_EMAIL
+  
 } from "./types";
 
 //Add course
@@ -148,6 +151,7 @@ export const updateCourse = (id, formData, history) => async (dispatch) => {
         "Content-Type": "multipart/form-data",
       },
     };
+
 
     const res = await axios.put(`/api/courses/${id}`, formData, config);
     dispatch({
@@ -468,5 +472,33 @@ export const deleteAssignment = (id) => async (dispatch) => {
       type: DELETE_ERROR,
       payload: { status: err.response.status },
     });
+  }
+};
+
+//update password
+export const updatePassword = (password) => async (dispatch) => {
+  try {
+    const res = await axios.put(`/api/students/change-password`, {"password": password});
+    dispatch(setAlert("Password updated", "success"));
+    dispatch({
+      type: CHANGE_PASSWORD,
+      payload: res.data,
+    });
+
+  } catch (err) {
+  }
+};
+
+//update email
+export const updateEmail= (email) => async (dispatch) => {
+  try {
+    const res = await axios.put(`/api/students/change-email`, {"email": email});
+    dispatch(setAlert("Email updated", "success"));
+    dispatch({
+      type: CHANGE_EMAIL,
+      payload: res.data,
+    });
+
+  } catch (err) {
   }
 };

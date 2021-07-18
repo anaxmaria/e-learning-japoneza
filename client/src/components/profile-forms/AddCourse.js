@@ -24,6 +24,7 @@ const AddCourse = ({ addCourse, history, getCourseById, match }) => {
       </h1>
       <form
         class="form"
+        autocomplete="off"
         method="POST"
         encType="multipart/form-data"
         onSubmit={(e) => {

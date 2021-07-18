@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator/check");
 const Student = require("../../models/Student");
 const config = require("config");
+const authStudent = require("../../middleware/authStudent");
 
 //@route POST api/students
 //@desc Register student
@@ -69,6 +70,75 @@ router.post(
       res.status(500).send("Server error");
     }
   }
+);
+
+//update password 
+router.put(
+  "/change-password",
+  [
+    check(
+      "password",
+      "Please enter a password with 6 or more characters"
+    ).isLength({ min: 6 })
+  ],
+  authStudent,
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { password } = req.body;
+
+    try {
+      //See if the user exists
+      let student = await Student.findById(req.student.id)
+
+      //Encrypt password
+
+      const salt = await bcrypt.genSalt(10);
+
+      student.password = await bcrypt.hash(password, salt);
+      await student.save();
+      
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
+
+    } 
+);
+
+//update email 
+router.put(
+  "/change-email",
+  [
+    check("email", "Please include an valid email").isEmail()
+  ], 
+  authStudent,
+  async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    const { email } = req.body;
+
+    try {
+      //See if the user exists
+      let student = await Student.findById(req.student.id)
+
+      student.email = email;
+      await student.save();
+      
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
+
+    } 
 );
 
 module.exports = router;

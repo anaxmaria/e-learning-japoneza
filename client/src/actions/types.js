@@ -64,3 +64,7 @@ export const GET_QUIZ_BY_STUDENT_NAME = "GET_QUIZ_BY_STUDENT_NAME";
 //
 export const ADD_COMMENT = "ADD_COMMENT";
 export const COMMENT_ERROR = "COMMENT_ERROR";
+
+//
+export const CHANGE_PASSWORD = "CHANGE_PASSWORD";
+export const CHANGE_EMAIL = "CHANGE_EMAIL";
